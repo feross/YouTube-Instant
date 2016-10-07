@@ -22,6 +22,14 @@
     that knows not victory nor defeat.
                                                     — Theodore Roosevelt
     -->
+    <!-- 
+
+    video autosuggest by-
+    http://midhruvjaink.xyz/
+
+    Developer	Dhruv Jain
+
+    -->
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>YouTube Instant - Real-time YouTube video surfing.</title>
@@ -60,11 +68,21 @@
 <div id="outerWrapper">
     <div id="wrapper">
         <div id="header" class="clearfix">
+        <form class="" id="searchBox" ng-app ng-controller="Ctrl">
                 <div id="logo">
                     <a href="http://ytinstant.com"><span>YouTube Instant</span></a>
                 </div>
             <input id="searchBox" value="" spellcheck="false"></input>
+            <datalist id="items">
+	    		<option ng-repeat="option in dataset" value="{{option[0]}}" />
+	  		</datalist>
+			<script type="text/javascript" src="autoSuggest.js"></script>			
+      		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
             <span id="searchTermKeyword"><strong>Search YouTube Instantly</strong></span>
+        </form>
+        <script>
+			var Ctrl;
+		</script>
         </div>
         <div id="main" class="clearfix">
             <div id="videoDiv">
